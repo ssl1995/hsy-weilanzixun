@@ -1,11 +1,13 @@
 package com.azure.azure_merge.entity;
 
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.azure.azure_merge.common.SlashDelimitedStringToListConverter;
+import com.azure.azure_merge.common.convert.JsonConverter;
+import com.azure.azure_merge.common.convert.StringConverter;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.google.common.collect.Lists;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -52,12 +54,15 @@ public class ProjectCenter implements Serializable {
     @ExcelProperty("是否删除")
     private int isDeleted;
 
-    @ExcelProperty(converter = SlashDelimitedStringToListConverter.class, value = "区域")
+    @ExcelProperty(value = "区域")
     private String projectRegion;
+
     @ExcelProperty("招标预算")
     private BigDecimal projectPrice;
-    @ExcelProperty(converter = SlashDelimitedStringToListConverter.class, value = "项目所属板块")
+
+    @ExcelProperty(value = "项目所属板块")
     private String projectPlate;
+
     @ExcelProperty("城市")
     private String city;
     @ExcelProperty("州")
@@ -70,7 +75,7 @@ public class ProjectCenter implements Serializable {
     private String biddingType;
     @ExcelProperty("招标详情")
     private String tendersDetails;
-    @ExcelProperty("招标预算币种")
+    @ExcelProperty("招标预算币?种")
     private String currency;
 
 }

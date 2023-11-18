@@ -37,7 +37,6 @@ public class ProjectController {
     ProjectCenterMapper projectCenterMapper;
 
 
-
     @GetMapping("/projectcenter")
     @ApiOperation("分页展示所有数据")
     public CommonResult<Page> projectSelectAll(int page, int pageSize) {
@@ -47,6 +46,7 @@ public class ProjectController {
         projectCenterService.page(pageinfo, projectLambdaQueryWrapper);
         return CommonResult.success(pageinfo, "查询成功");
     }
+
     //项目名称关键词搜索
     @GetMapping("/keywords")
     @ApiOperation("关键词搜索")
@@ -165,7 +165,7 @@ public class ProjectController {
 //                projectCenter.getTendersDetails(), projectCenter.getCurrency());
 ////        projectDTO.setAddressNumber(projectCenter.getAddressNumber());
 //        return CommonResult.success(projectDTO);
-  //  }
+    //  }
 
     //项目删除
     @DeleteMapping("/delete")
@@ -181,7 +181,7 @@ public class ProjectController {
      * @param file
      * @throws IOException
      */
-    @PostMapping(value = "/import",consumes ="multipart/form-data")
+    @PostMapping(value = "/import", consumes = "multipart/form-data")
     public void projectExcelImport(@RequestPart("file") MultipartFile file) throws IOException {
         InputStream is = file.getInputStream();
         ProjectReadListener projectReadListener = new ProjectReadListener(projectCenterMapper);
@@ -189,7 +189,6 @@ public class ProjectController {
                 .sheet(0)
                 .headRowNumber(1)
                 .doRead();
-
     }
 
     //pdf下载
@@ -256,14 +255,14 @@ public class ProjectController {
         outputStream.flush();
 
     }
-//pdf上传
-    @PostMapping(value = "/upload",consumes ="multipart/form-data")
-    public CommonResult<String> projectUploadPDF(@RequestPart("file")MultipartFile file) throws IOException {
+
+    //pdf上传
+    @PostMapping(value = "/upload", consumes = "multipart/form-data")
+    public CommonResult<String> projectUploadPDF(@RequestPart("file") MultipartFile file) throws IOException {
         log.info(file.toString());
         String fileName = file.getOriginalFilename();
         File dir = new File("D:\\test");//bathPath可指定一个固定路径
-        if(!dir.exists())
-        {
+        if (!dir.exists()) {
             dir.mkdir();
         }
         file.transferTo(new File("D:\\test" + fileName));

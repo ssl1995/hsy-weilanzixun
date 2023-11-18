@@ -11,7 +11,7 @@ public class CountryReport implements Serializable {
     private static final long serialVersionUID = 1L;
     //报告id
     @TableId(type = IdType.AUTO)
-    private int reportId;
+    private Integer reportId;
     //报告关键词
     private String reportKeywords;
     //所属国家
@@ -23,9 +23,7 @@ public class CountryReport implements Serializable {
     //导入时间
     private LocalDateTime importTime;
     //导入管理员id
-    private int importUserid;
+    private Integer importUserid;
     //是否删除
-    private int isDeleted;
-
-
+    private Integer isDeleted;
 }
