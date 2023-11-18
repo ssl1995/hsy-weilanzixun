@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azure.azure_merge.mapper.ViplogsMapper">
+
+    <resultMap id="BaseResultMap" type="com.azure.azure_merge.entity.Viplogs">
+            <id property="logId" column="log_id" jdbcType="INTEGER"/>
+            <result property="resourceType" column="resource_type" jdbcType="INTEGER"/>
+            <result property="resourceId" column="resource_id" jdbcType="INTEGER"/>
+            <result property="userId" column="user_id" jdbcType="INTEGER"/>
+            <result property="logTime" column="log_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        log_id,resource_type,resource_id,
+        user_id,log_time
+    </sql>
+</mapper>

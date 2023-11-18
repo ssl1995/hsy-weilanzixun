@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azure.azure_merge.mapper.CountryDetailMapper">
+
+    <resultMap id="BaseResultMap" type="com.azure.azure_merge.entity.CountryDetail">
+            <id property="countryId" column="country_id" jdbcType="INTEGER"/>
+            <result property="countryName" column="country_name" jdbcType="VARCHAR"/>
+            <result property="countryPolitics" column="country_politics" jdbcType="VARCHAR"/>
+            <result property="rulingParty" column="ruling_party" jdbcType="VARCHAR"/>
+            <result property="oppositionParty" column="opposition_party" jdbcType="VARCHAR"/>
+            <result property="economicVolume" column="economic_volume" jdbcType="VARCHAR"/>
+            <result property="externalRelation" column="external_relation" jdbcType="VARCHAR"/>
+            <result property="regionId" column="region_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        country_id,country_name,country_politics,
+        ruling_party,opposition_party,economic_volume,
+        external_relation,region_id
+    </sql>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azure.azure_merge.mapper.NewsMapper">
+
+    <resultMap id="BaseResultMap" type="com.azure.azure_merge.entity.News">
+            <id property="newsId" column="news_id" jdbcType="INTEGER"/>
+            <result property="websiteTitle" column="website_title" jdbcType="VARCHAR"/>
+            <result property="newsTitle" column="news_title" jdbcType="VARCHAR"/>
+            <result property="newsLink" column="news_link" jdbcType="VARCHAR"/>
+            <result property="newsThumbnail" column="news_thumbnail" jdbcType="VARCHAR"/>
+            <result property="newsUpdatedTime" column="news_updated_time" jdbcType="VARCHAR"/>
+            <result property="newsContent" column="news_content" jdbcType="VARCHAR"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="INTEGER"/>
+            <result property="adminId" column="admin_id" jdbcType="INTEGER"/>
+            <result property="newsRegionId" column="news_region_id" jdbcType="INTEGER"/>
+            <result property="newsIndustryId" column="news_industry_id" jdbcType="INTEGER"/>
+            <result property="newsTypeId" column="news_type_id" jdbcType="INTEGER"/>
+            <result property="isPublished" column="is_published" jdbcType="TINYINT"/>
+            <result property="newsGetTime" column="news_get_time" jdbcType="VARCHAR"/>
+            <result property="newsPublishedTime" column="news_published_time" jdbcType="DATE"/>
+            <result property="newsAbstract" column="news_abstract" jdbcType="VARCHAR"/>
+            <result property="websiteUrl" column="website_url" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        news_id,website_title,news_title,
+        news_link,news_thumbnail,news_updated_time,
+        news_content,is_deleted,admin_id,
+        news_region_id,news_industry_id,news_type_id,
+        is_published,news_get_time,news_published_time,
+        news_abstract,website_url
+    </sql>
+</mapper>

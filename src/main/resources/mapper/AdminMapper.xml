@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azure.azure_merge.mapper.AdminMapper">
+
+    <resultMap id="BaseResultMap" type="com.azure.azure_merge.entity.Admin">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="adminId" column="admin_id" jdbcType="INTEGER"/>
+            <result property="adminUsername" column="admin_username" jdbcType="VARCHAR"/>
+            <result property="adminPassword" column="admin_password" jdbcType="VARCHAR"/>
+            <result property="roleId" column="role_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,admin_id,admin_username,
+        admin_password,role_id
+    </sql>
+</mapper>

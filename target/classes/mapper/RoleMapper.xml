@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azure.azure_merge.mapper.RoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.azure.azure_merge.entity.Role">
+            <id property="roleId" column="role_id" jdbcType="INTEGER"/>
+            <result property="roleName" column="role_name" jdbcType="OTHER"/>
+            <result property="roleDescription" column="role_description" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        role_id,role_name,role_description
+    </sql>
+</mapper>

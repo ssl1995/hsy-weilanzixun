@@ -1,0 +1,43 @@
+server:
+  port: 8080
+spring:
+  application:
+    #应用的名称，可选
+    name: weilanzixun
+  mvc:
+    pathmatch:
+      # 引入swagger3.0时加入的配置 localhost:8080/swagger-ui/index.html
+      matching-strategy: ant_path_matcher
+  redis:
+    host: 117.50.67.20
+    port: 6379
+    password: xX5916617!
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+    database: 0
+    timeout: 3000ms
+    servlet:
+      multipart:
+        max-file-size: 200MB  # 设置单个文件的最大大小
+        max-request-size: 1000MB  # 设置请求的最大大小
+        enabled: true  # 开启文件上传
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://117.50.67.20:3306/azure_information?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: developer
+      password: Developer123...
+mybatis-plus:
+  configuration:
+    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+file:
+  upload_path: D:/upload
+

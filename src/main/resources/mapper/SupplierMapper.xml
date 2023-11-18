@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.azure.azure_merge.mapper.SupplierMapper">
+
+    <resultMap id="BaseResultMap" type="com.azure.azure_merge.entity.Supplier">
+            <id property="supplierId" column="supplier_id" jdbcType="INTEGER"/>
+            <result property="supplierName" column="supplier_name" jdbcType="VARCHAR"/>
+            <result property="logoPath" column="logo_path" jdbcType="VARCHAR"/>
+            <result property="supplierIntroduction" column="supplier_introduction" jdbcType="VARCHAR"/>
+            <result property="supplierType" column="supplier_type" jdbcType="VARCHAR"/>
+            <result property="supplierAddress" column="supplier_address" jdbcType="VARCHAR"/>
+            <result property="country" column="country" jdbcType="INTEGER"/>
+            <result property="contactPerson" column="contact_person" jdbcType="VARCHAR"/>
+            <result property="contactNumber" column="contact_number" jdbcType="VARCHAR"/>
+            <result property="filePath" column="file_path" jdbcType="VARCHAR"/>
+            <result property="importTime" column="import_time" jdbcType="TIMESTAMP"/>
+            <result property="importUserid" column="import_userid" jdbcType="INTEGER"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        supplier_id,supplier_name,logo_path,
+        supplier_introduction,supplier_type,supplier_address,
+        country,contact_person,contact_number,
+        file_path,import_time,import_userid,
+        is_deleted
+    </sql>
+</mapper>
